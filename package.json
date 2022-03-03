@@ -1,0 +1,11 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "My personal Leetcode repository.",
+  "main": "spec.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kavita Poduri",
+  "license": "ISC"
+}
