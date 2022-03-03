@@ -2,20 +2,22 @@ const numberOfArithmeticSlices = (nums) => {
   if (nums.length < 3) {
     return 0;
   }
-  let diffs = [];
-  nums.forEach((element, index) => {
-    if (nums[index + 1]) {
-      diffs.push(nums[index + 1] - element);
-    }
-  });
-  let count = 0;
-  diffs.forEach((element, index) => {
-    if (element === diffs[index + 1]) {
-      count++;
-    }
-  });
 
-  return Math.abs(count - diffs.length) <= 1 ? count + 1 : count;
+  let [gap, seqs, count] = [-1, 0, 0];
+
+  for (let i = 0; i < nums.length; i++) {
+    let diff = nums[i] - nums[i - 1];
+
+    if (diff !== gap) {
+      gap = diff;
+      seqs = 1;
+    } else {
+      count += seqs;
+      seqs++;
+    }
+  }
+
+  return count;
 };
 
 module.exports = numberOfArithmeticSlices;
