@@ -1,4 +1,5 @@
 const numberOfArithmeticSlices = require('./arithmetic-slices/arithmetic-slices.js');
+const deleteAndEarn = require('./delete-earn/delete-earn.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -27,5 +28,12 @@ describe('arithmetic slices', () => {
   });
   it('should return 1 for [-1, 0, 1]', () => {
     expect(numberOfArithmeticSlices([-1, 0, 1])).toBe(1);
+  });
+});
+
+describe.only('delete and earn', () => {
+  it('should return the correct responses for the provided examples', () => {
+    expect(deleteAndEarn([3, 4, 2])).toBe(6);
+    expect(deleteAndEarn([2, 2, 3, 3, 3, 4])).toBe(9);
   });
 });
