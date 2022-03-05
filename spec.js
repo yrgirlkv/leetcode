@@ -36,4 +36,13 @@ describe.only('delete and earn', () => {
     expect(deleteAndEarn([3, 4, 2])).toBe(6);
     expect(deleteAndEarn([2, 2, 3, 3, 3, 4])).toBe(9);
   });
+  it('should work for the simplest base case', () => {
+    expect(deleteAndEarn([3, 3, 3])).toBe(9);
+  });
+  it('should work for blank arrays', () => {
+    expect(deleteAndEarn([])).toBe(0);
+  });
+  it('should work for a very simple recursive case', () => {
+    expect(deleteAndEarn([3, 4])).toBe(4);
+  });
 });
