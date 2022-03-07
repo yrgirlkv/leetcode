@@ -12,7 +12,9 @@
  */
 
 const mergeTwoLists = function (list1, list2) {
-  //figure out how to make it stop and you're golden
+  if (!list1 || !list2) {
+    return list2 || list1;
+  }
   let head, tail;
   if (list1?.val < list2?.val) {
     head = list1;
@@ -21,11 +23,7 @@ const mergeTwoLists = function (list1, list2) {
     head = list2;
     tail = list1;
   }
-  if (head?.next) {
-    head.next = mergeTwoLists(head?.next, tail);
-  } else {
-    head.next = tail;
-  }
+  head.next = mergeTwoLists(head.next, tail);
   return head;
 };
 
