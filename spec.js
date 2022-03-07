@@ -4,6 +4,7 @@ const {
   mergeTwoLists,
   sampleList1,
   sampleList2,
+  linkedListArray,
 } = require('./merge-two-sorted-lists/merge-two-sorted-lists.js');
 
 describe('sample test', () => {
@@ -53,7 +54,10 @@ describe('delete and earn', () => {
 });
 
 describe.only('merge two sorted lists', () => {
-  it('should returnthe head of a linked list', () => {
+  it('should return the head of a linked list', () => {
     expect(mergeTwoLists(sampleList1, sampleList2).val).toBe(1);
+  });
+  it('should return an array out of a linked list', () => {
+    expect(linkedListArray(sampleList1)).toStrictEqual([1, 2, 4]);
   });
 });
