@@ -1,5 +1,10 @@
 const numberOfArithmeticSlices = require('./arithmetic-slices/arithmetic-slices.js');
 const deleteAndEarn = require('./delete-earn/delete-earn.js');
+const {
+  mergeTwoLists,
+  sampleList1,
+  sampleList2,
+} = require('./merge-two-sorted-lists/merge-two-sorted-lists.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -31,7 +36,7 @@ describe('arithmetic slices', () => {
   });
 });
 
-describe.only('delete and earn', () => {
+describe('delete and earn', () => {
   it('should return the correct responses for the provided examples', () => {
     expect(deleteAndEarn([3, 4, 2])).toBe(6);
     expect(deleteAndEarn([2, 2, 3, 3, 3, 4])).toBe(9);
@@ -44,5 +49,11 @@ describe.only('delete and earn', () => {
   });
   it('should work for a very simple recursive case', () => {
     expect(deleteAndEarn([3, 4])).toBe(4);
+  });
+});
+
+describe.only('merge two sorted lists', () => {
+  it('should returnthe head of a linked list', () => {
+    expect(mergeTwoLists(sampleList1, sampleList2).val).toBe(1);
   });
 });
