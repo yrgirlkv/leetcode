@@ -61,4 +61,9 @@ describe.only('merge two sorted lists', () => {
     expect(linkedListArray(sampleList1)).toStrictEqual([1, 2, 4]);
     expect(linkedListArray(sampleList2)).toStrictEqual([1, 3, 4]);
   });
+  it('should return a correctly sorted list', () => {
+    expect(
+      linkedListArray(mergeTwoLists(sampleList1, sampleList2))
+    ).toStrictEqual([1, 1, 2, 3, 4, 4]);
+  });
 });

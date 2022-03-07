@@ -12,11 +12,22 @@
  */
 
 const mergeTwoLists = function (list1, list2) {
-  let [head, second] =
-    list1?.val < list2?.val ? [list1, list2] : [list2, list1];
-  let chain = { val: head?.val, next: null };
-  chain.next = mergeTwoLists(second, head?.next);
-  return head;
+  //figure out how to make it stop and you're golden
+  let head, tail;
+  if (list1?.val < list2?.val) {
+    head = list1;
+    tail = list2;
+  } else if (list1?.val >= list2?.val || !list2.next) {
+    head = list2;
+    tail = list1;
+  }
+  console.log('head.next', head.next, 'tail', tail);
+  if (head.next === null) {
+    return tail;
+  } else {
+    head.next = mergeTwoLists(head.next, tail);
+    return head;
+  }
 };
 
 const linkedListArray = (list) => {
