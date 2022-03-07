@@ -54,16 +54,16 @@ describe('delete and earn', () => {
 });
 
 describe.only('merge two sorted lists', () => {
-  xit('should return the head of a linked list', () => {
-    expect(mergeTwoLists(sampleList1, sampleList2).val).toBe(1);
-  });
   it('should return an array out of a linked list', () => {
     expect(linkedListArray(sampleList1)).toStrictEqual([1, 2, 4]);
     expect(linkedListArray(sampleList2)).toStrictEqual([1, 3, 4]);
   });
+  xit('should return the head of a linked list', () => {
+    const mergedList = mergeTwoLists(sampleList1, sampleList2);
+    expect(mergedList.val).toBe(1);
+  });
   it('should return a correctly sorted list', () => {
-    expect(
-      linkedListArray(mergeTwoLists(sampleList1, sampleList2))
-    ).toStrictEqual([1, 1, 2, 3, 4, 4]);
+    const mergedList = mergeTwoLists(sampleList1, sampleList2);
+    expect(linkedListArray(mergedList)).toStrictEqual([1, 1, 2, 3, 4, 4]);
   });
 });

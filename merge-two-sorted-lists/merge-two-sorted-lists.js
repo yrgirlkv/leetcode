@@ -17,25 +17,26 @@ const mergeTwoLists = function (list1, list2) {
   if (list1?.val < list2?.val) {
     head = list1;
     tail = list2;
-  } else if (list1?.val >= list2?.val || !list2.next) {
+  } else if (list1?.val >= list2?.val || !list2?.next) {
     head = list2;
     tail = list1;
   }
-  console.log('head.next', head.next, 'tail', tail);
-  if (head.next === null) {
-    return tail;
+  if (head?.next) {
+    head.next = mergeTwoLists(head?.next, tail);
   } else {
-    head.next = mergeTwoLists(head.next, tail);
-    return head;
+    head.next = tail;
   }
+  return head;
 };
 
 const linkedListArray = (list) => {
-  if (list.next === null) {
-    return [list.val];
-  } else {
-    return [list.val, ...linkedListArray(list.next)];
+  let array = [list.val];
+  while (list.next != null) {
+    list = list.next;
+    array.push(list.val);
   }
+  console.log(array);
+  return array;
 };
 
 module.exports = {
