@@ -6,6 +6,7 @@ const {
   sampleList2,
   linkedListArray,
 } = require('./merge-two-sorted-lists/merge-two-sorted-lists.js');
+const hasCycle = require('./linked-list-cycle/linked-list-cycle.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -53,7 +54,7 @@ describe('delete and earn', () => {
   });
 });
 
-describe.only('merge two sorted lists', () => {
+describe('merge two sorted lists', () => {
   it('should return an array out of a linked list', () => {
     expect(linkedListArray(sampleList1)).toStrictEqual([1, 2, 4]);
     expect(linkedListArray(sampleList2)).toStrictEqual([1, 3, 4]);
@@ -65,5 +66,14 @@ describe.only('merge two sorted lists', () => {
   it('should return a correctly sorted list', () => {
     const mergedList = mergeTwoLists(sampleList1, sampleList2);
     expect(linkedListArray(mergedList)).toStrictEqual([1, 1, 2, 3, 4, 4]);
+  });
+});
+
+describe.only('linked list cycle', () => {
+  xit('should return true for a linked list that has a loop', () => {
+    expect(FILL_IN_VALUE).toBe(true);
+  });
+  xit("should return false for a linked list that doesn't have a loop", () => {
+    expect(FILL_IN_VALUE).toBe(false);
   });
 });
