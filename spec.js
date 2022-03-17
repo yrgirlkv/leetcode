@@ -87,4 +87,7 @@ describe.only('score of parentheses', () => {
     expect(scoreOfParentheses('(())')).toBe(2);
     expect(scoreOfParentheses('()()')).toBe(2);
   });
+  it('should return correct scores for complex strings', () => {
+    expect(scoreOfParentheses('(()())')).toBe(4);
+  });
 });
