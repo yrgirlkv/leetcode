@@ -7,6 +7,7 @@ const {
   linkedListArray,
 } = require('./merge-two-sorted-lists/merge-two-sorted-lists.js');
 const hasCycle = require('./linked-list-cycle/linked-list-cycle.js');
+const scoreOfParentheses = require('./score-of-parentheses/score-of-parentheses.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -69,11 +70,21 @@ describe('merge two sorted lists', () => {
   });
 });
 
-describe.only('linked list cycle', () => {
+describe('linked list cycle', () => {
   xit('should return true for a linked list that has a loop', () => {
     expect(FILL_IN_VALUE).toBe(true);
   });
   xit("should return false for a linked list that doesn't have a loop", () => {
     expect(FILL_IN_VALUE).toBe(false);
+  });
+});
+
+describe.only('score of parentheses', () => {
+  it('should return the correct score for the most basic string', () => {
+    expect(scoreOfParentheses('()')).toBe(1);
+  });
+  it('should return correct scores for strings of minor complexity', () => {
+    expect(scoreOfParentheses('(())')).toBe(2);
+    expect(scoreOfParentheses('()()')).toBe(2);
   });
 });
