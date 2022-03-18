@@ -1,12 +1,17 @@
-const scoreOfParentheses = (string) => {
-  let splitString = string.split(')');
-  return splitString.reduce((prev, now) => {
-    if (typeof prev === 'string') {
-      return prev.length + now.length;
+const scoreOfParentheses = (s) => {
+  let score = 0;
+  let h = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(') {
+      h++;
     } else {
-      return prev + now.length;
+      h--;
+      if (s[i - 1] === '(') {
+        score += 2 ** h;
+      }
     }
-  });
+  }
+  return score;
 };
 
 module.exports = scoreOfParentheses;
