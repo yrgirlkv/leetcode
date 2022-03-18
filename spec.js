@@ -8,6 +8,7 @@ const {
 } = require('./merge-two-sorted-lists/merge-two-sorted-lists.js');
 const hasCycle = require('./linked-list-cycle/linked-list-cycle.js');
 const scoreOfParentheses = require('./score-of-parentheses/score-of-parentheses.js');
+const removeDuplicateLetters = require('./remove-duplicate-letters/remove-duplicate-letters.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -79,7 +80,7 @@ describe('linked list cycle', () => {
   });
 });
 
-describe.only('score of parentheses', () => {
+describe('score of parentheses', () => {
   it('should return the correct score for the most basic string', () => {
     expect(scoreOfParentheses('()')).toBe(1);
   });
@@ -92,5 +93,12 @@ describe.only('score of parentheses', () => {
   });
   it('should score combination strings correctly', () => {
     expect(scoreOfParentheses('(()(()))')).toBe(6);
+  });
+});
+
+describe('remove duplicate letters', () => {
+  it('should pass the provided test cases', () => {
+    expect(removeDuplicateLetters('bcabc')).toBe('abc');
+    expect(removeDuplicateLetters('cbacdcbc')).toBe('acdb');
   });
 });
