@@ -96,7 +96,7 @@ describe('score of parentheses', () => {
   });
 });
 
-describe('remove duplicate letters', () => {
+describe.only('remove duplicate letters', () => {
   it('should pass the provided test cases', () => {
     expect(removeDuplicateLetters('bcabc')).toBe('abc');
     expect(removeDuplicateLetters('cbacdcbc')).toBe('acdb');
