@@ -108,4 +108,10 @@ describe.only('boats to save people', () => {
   it('should return the correct minimum for the first arbitrary test case', () => {
     expect(numRescueBoats([1, 2], 3)).toBe(1);
   });
+  it('should get the second test correct', () => {
+    expect(numRescueBoats([3, 2, 2, 1], 3)).toBe(3);
+  });
+  it('should get the third test correct', () => {
+    expect(numRescueBoats([3, 5, 4, 5], 5)).toBe(4);
+  });
 });
