@@ -1,15 +1,14 @@
 const numRescueBoats = (people, limit) => {
-  people = people.sort();
-  let capacity = limit;
-  let boats = 1;
-  for (let person of people) {
-    if (person <= capacity) {
-      capacity -= person;
-    } else {
-      boats++;
+  people.sort();
+  let [i, j, boats] = [0, people.length, 0];
+  while (i <= j) {
+    boats += 1;
+    if (people[i] + people[j] <= limit) {
+      i++;
     }
+    j--;
   }
-  return boats;
+  return boats - 1;
 };
 
 module.exports = numRescueBoats;

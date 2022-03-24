@@ -114,4 +114,7 @@ describe.only('boats to save people', () => {
   it('should get the third test correct', () => {
     expect(numRescueBoats([3, 5, 4, 5], 5)).toBe(4);
   });
+  it('should get a provided test correct', () => {
+    expect(numRescueBoats([21, 40, 16, 24, 30], 50)).toBe(3);
+  });
 });
