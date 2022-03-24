@@ -9,6 +9,7 @@ const {
 const hasCycle = require('./linked-list-cycle/linked-list-cycle.js');
 const scoreOfParentheses = require('./score-of-parentheses/score-of-parentheses.js');
 const removeDuplicateLetters = require('./remove-duplicate-letters/remove-duplicate-letters.js');
+const numRescueBoats = require('./boats-to-save-people/boats-to-save-people.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -96,9 +97,15 @@ describe('score of parentheses', () => {
   });
 });
 
-describe.only('remove duplicate letters', () => {
+describe('remove duplicate letters', () => {
   it('should pass the provided test cases', () => {
     expect(removeDuplicateLetters('bcabc')).toBe('abc');
     expect(removeDuplicateLetters('cbacdcbc')).toBe('acdb');
+  });
+});
+
+describe.only('boats to save people', () => {
+  it('should return the correct minimum for the first arbitrary test case', () => {
+    expect(numRescueBoats([1, 2], 3)).toBe(1);
   });
 });
