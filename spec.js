@@ -10,6 +10,7 @@ const hasCycle = require('./linked-list-cycle/linked-list-cycle.js');
 const scoreOfParentheses = require('./score-of-parentheses/score-of-parentheses.js');
 const removeDuplicateLetters = require('./remove-duplicate-letters/remove-duplicate-letters.js');
 const numRescueBoats = require('./boats-to-save-people/boats-to-save-people.js');
+const searchMatrix = require('./search-2d-matrix/search-2d-matrix.js');
 
 describe('sample test', () => {
   it('should run tests', () => {
@@ -104,7 +105,7 @@ describe('remove duplicate letters', () => {
   });
 });
 
-describe.only('boats to save people', () => {
+describe('boats to save people', () => {
   it('should return the correct minimum for the first arbitrary test case', () => {
     expect(numRescueBoats([1, 2], 3)).toBe(1);
   });
@@ -116,5 +117,16 @@ describe.only('boats to save people', () => {
   });
   it('should get a provided test correct', () => {
     expect(numRescueBoats([21, 40, 16, 24, 30], 50)).toBe(3);
+  });
+});
+
+describe.only('search a 2d matrix', () => {
+  it('should check matrices efficiently', () => {
+    let matrix = [
+      [1, 3, 5, 7],
+      [10, 11, 16, 20],
+      [23, 30, 34, 60],
+    ];
+    expect(searchMatrix(matrix, 3)).toBe(true);
   });
 });
