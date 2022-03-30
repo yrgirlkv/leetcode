@@ -127,6 +127,16 @@ describe.only('search a 2d matrix', () => {
       [10, 11, 16, 20],
       [23, 30, 34, 60],
     ];
-    expect(searchMatrix(matrix, 3)).toBe(true);
+    let target = 3;
+    expect(searchMatrix(matrix, target)).toBe(true);
+  });
+  it('should identify if a target is not in the matrix', () => {
+    let matrix = [
+      [1, 3, 5, 7],
+      [10, 11, 16, 20],
+      [23, 30, 34, 60],
+    ];
+    let target = 33;
+    expect(searchMatrix(matrix, target)).toBe(false);
   });
 });
